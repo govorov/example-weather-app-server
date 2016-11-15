@@ -1,0 +1,17 @@
+{
+  "name": "weather_server",
+  "version": "1.0.0",
+  "description": "example js application for js lecture (serverside component)",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Stanislav E. Govorov",
+  "license": "MIT"
+}
