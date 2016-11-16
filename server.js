@@ -47,7 +47,7 @@ app.get('/humidity',function(req,res){
     res.json({result:value});
 });
 
-let port = process.env.port || 3000;
+let port = process.env.PORT || 3000;
 
 app.listen(port, function(){
     console.log(`App started on ${port}`);
