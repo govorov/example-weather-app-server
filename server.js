@@ -15,6 +15,7 @@ app.get('/',function(req,res){
 
 app.get('/precipation',function(req,res){
     let values = [
+        'clear',
     	'rain',
     	'hail',
     	'snow',
