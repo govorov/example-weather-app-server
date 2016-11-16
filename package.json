@@ -4,6 +4,7 @@
   "description": "example js application for js lecture (serverside component)",
   "main": "server.js",
   "dependencies": {
+    "cors": "^2.8.1",
     "express": "^4.14.0",
     "lodash": "^4.17.1"
   },

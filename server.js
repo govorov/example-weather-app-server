@@ -1,6 +1,16 @@
 const express = require('express');
-const _ 	  = require('lodash');
-let app       = express();
+const cors    = require('cors');
+const _       = require('lodash');
+
+let app = express();
+
+
+app.use(cors());
+
+
+app.get('/',function(req,res){
+	res.send("Use /temperature, /precipation, /wind, /humidity");
+});
 
 
 app.get('/precipation',function(req,res){
@@ -24,6 +34,7 @@ app.get('/temperature',function(req,res){
 	let min  = -40;
 	let max  =  40;
 	let temp = min + Math.round(Math.random()*max);
+    // temp = Date.now();
     res.json({result:temp});
 });
 
