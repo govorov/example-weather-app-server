@@ -36,7 +36,7 @@ app.get('/wind',function(req,res){
 app.get('/temperature',function(req,res){
 	let min  = -40;
 	let max  =  40;
-	let temp = min + Math.round(Math.random()*max);
+	let temp = min + Math.round(Math.random()*max-min);
     // temp = Date.now();
     res.json({result:temp});
 });
