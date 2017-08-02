@@ -14,27 +14,32 @@ app.use(delay(0, 1000));
 
 
 app.get('/',function(req,res){
-    res.send("Use /temperature, /precipation, /wind/speed, /wind/direction, /humidity");
+    res.send("Use /temperature, /precipitation, /wind/speed, /wind/direction, /humidity");
 });
 
 
-app.get('/precipation',function(req,res){
+app.get('/precipitation',function(req,res){
     const values = [
-        'clear',
+        null,
         'rain',
         'hail',
-        'fog',
         'snow',
         'lightning',
         'thunderstorm',
+        'meteor',
     ];
     res.json({result:_.sample(values)});
 });
 
 
+const getRandomFromRange = (min,max) => {
+    return min + Math.round(Math.random()*(max-min));
+};
+
+
 app.get('/wind/speed',function(req,res){
-    const speed = Math.round(Math.random()*30);
-    res.json({result:speed});
+    const result = getRandomFromRange(0,30);
+    res.json({result});
 });
 
 
@@ -62,21 +67,19 @@ app.get('/wind/direction',function(req,res){
 
 
 app.get('/temperature',function(req,res){
-    const min  = 10;
-    const max  = 40;
-    const temp = min + Math.round(Math.random()*(max-min));
-    res.json({result:temp});
+    const result = getRandomFromRange(-10,40);
+    res.json({result});
 });
 
 
 app.get('/humidity',function(req,res){
-    const min  = 15;
-    const max  = 95;
-    const value = min + Math.round(Math.random()*(max-min));
-    res.json({result:value});
+    const result = getRandomFromRange(15,95);
+    res.json({result});
 });
 
+
 const port = process.env.PORT || 8081;
+
 
 app.listen(port, function(){
     console.log(`App started on ${port}`);
